@@ -1,5 +1,5 @@
 # A tool to grab weight data transmitted from a yoda1 bluetooth scale
-# Copyright (C) 2025 chickendrop89
+# Copyright (C) 2025 chkndrp
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
