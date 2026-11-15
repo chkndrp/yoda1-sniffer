@@ -96,12 +96,14 @@ async def main() -> None:
     parser.add_argument(
         "-a", "--address", 
         type=str,
-        help="Bluetooth MAC address of the scale"
+        help="Bluetooth MAC address of the scale",
+        metavar="MAC"
     )
     parser.add_argument(
         "-t", "--timeout",
         type=int,
-        help="Discovery scan timeout in seconds"
+        help="Discovery scan timeout in seconds",
+        metavar="INT"
     )
     args = parser.parse_args()
 
