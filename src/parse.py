@@ -11,6 +11,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+"""Parses the manufacturer advertisement data from the scale"""
+
 import struct
 
 from dataclasses import dataclass

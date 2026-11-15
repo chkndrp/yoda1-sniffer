@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Main CLI entry point"""
+
 # A tool to grab weight data transmitted from a yoda1 bluetooth scale
 # Copyright (C) 2026 chkndrp
 #

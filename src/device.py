@@ -11,6 +11,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+"""Handles Bluetooth communication with the scale"""
+
 import asyncio
 import logging
 import struct
