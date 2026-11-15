@@ -25,7 +25,7 @@ class ScaleData:
     def __repr__(self):
         return f"ScaleData(weight={self.weight:.2f}{self.unit})"
 
-def parse_scale_data(data: bytes) -> ScaleData:
+def parse_scale_data(data: bytes) -> ScaleData | None:
     """Parses the manufacturer advertisement data from the scale."""
 
     if len(data) < 2:

@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 # Bluetooth MAC address prefix for CHIPSEA TECHNOLOGIES (Yoda1 MCU)
 YODA_MAC_PREFIX = "50:FB:19"
 
-def _parse_device_data(advertisement_data: AdvertisementData) -> ScaleData:
+def _parse_device_data(advertisement_data: AdvertisementData) -> ScaleData | None:
     """Helper to parse raw advertisement data into scale data."""
 
     try:
@@ -47,7 +47,7 @@ def _parse_device_data(advertisement_data: AdvertisementData) -> ScaleData:
 class YodaDevice:
     """A class to interact with a Yoda1 MCU"""
 
-    def __init__(self, mac_addr: str, data: ScaleData, device: BLEDevice):
+    def __init__(self, mac_addr: str, data: ScaleData | None, device: BLEDevice | None) -> None:
         self.mac_addr = mac_addr.upper()
         self.data = data
         self.dev = device
@@ -71,7 +71,7 @@ class YodaDevice:
                 await asyncio.sleep(1.0)
 
     @classmethod
-    async def discover(cls, timeout: int) -> list["YodaDevice"]:
+    async def discover(cls, timeout: int | None) -> list["YodaDevice"]:
         """Scans for the scale for a given amount of time."""
 
         yoda_devices = {}

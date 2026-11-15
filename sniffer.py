@@ -25,6 +25,7 @@ import logging
 import bleak
 
 from src.device import YodaDevice
+from src.parse import ScaleData
 
 def setup_logging() -> None:
     """Configure logging to be more readable."""
@@ -35,21 +36,21 @@ def setup_logging() -> None:
         handlers=[logging.StreamHandler()]
     )
 
-async def scan(address: str, timeout: int) -> None:
+async def scan(address: str | None, timeout: int | None) -> None:
     """Scans for Yoda1 scales and watches for data events."""
 
     device = None
     last_data = None
     logger = logging.getLogger(__name__)
 
-    def print_devices(logger: logging.Logger, devices: list) -> None:
+    def print_devices(logger: logging.Logger, devices: list[YodaDevice]) -> None:
 
         logger.info("--- Found Devices ---")
         for d in devices:
             logger.info(d.mac_addr)
         logger.info("---------------------")
 
-    def handle_data(scale_data):
+    def handle_data(scale_data: ScaleData) -> None:
         nonlocal last_data
 
         # Only log if the weight has changed
@@ -84,7 +85,7 @@ async def scan(address: str, timeout: int) -> None:
     except asyncio.CancelledError:
         logger.info("Event watching canceled.")
 
-async def main():
+async def main() -> None:
     """Parse command line arguments and start scanning."""
 
     parser = argparse.ArgumentParser(
