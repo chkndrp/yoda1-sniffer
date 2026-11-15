@@ -39,7 +39,7 @@ python sniffer.py -a 50:FB:19:XX:XX:XX
 scale's MCU is manufactured by a different company *for some reason*, you might want to edit it.
 
 ## Requirements
-- Python 3.9 or newer
+- Python 3.11 or newer
 - A Bluetooth interface
 - An OS compatible with [Bleak's requirements](https://github.com/hbldh/bleak?tab=readme-ov-file#features)
 
