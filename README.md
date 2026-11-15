@@ -4,16 +4,14 @@ This script grabs weight data that is transmitted by a
 
 ## Usage
 ```
-usage: sniffer.py [-h] [-a ADDRESS] [-t TIMEOUT]
+usage: sniffer.py [-h] [-a MAC] [-t INT]
 
 yoda1-sniffer - a tool to grab weight data transmitted from a yoda1 bluetooth scale
 
 options:
-  -h, --help            show this help message and exit
-  -a, --address ADDRESS
-                        Bluetooth MAC address of the scale (default: None)
-  -t, --timeout TIMEOUT
-                        Discovery scan timeout in seconds (default: None)
+  -h, --help         show this help message and exit
+  -a, --address MAC  Bluetooth MAC address of the scale (default: None)
+  -t, --timeout INT  Discovery scan timeout in seconds (default: None)
 ```
 
 ## Instructions
