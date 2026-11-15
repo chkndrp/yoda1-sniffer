@@ -23,6 +23,12 @@ clicking the button on the back side of the scale) for it to be discovered.
 - When the device is discovered, the script will automatically listen 
 for all advertisments from it's MAC address indefinitely
 
+- This project requires you to have `bleak` installed, and 
+[comply with it's requirements](https://github.com/hbldh/bleak?tab=readme-ov-file#features):
+```shell
+pip install -r requirements.txt
+```
+
 ## Basic Examples
 Running the tool to automatically discover any close `yoda1` scale, and listen for it
 ```shell
