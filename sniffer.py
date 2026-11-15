@@ -13,6 +13,12 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+import sys
+
+# pylint: disable=wrong-import-position
+if sys.version_info < (3, 11):
+    sys.exit("(x) Python 3.11 or higher is required to run this GUI.")
+
 import argparse
 import asyncio
 import logging
